@@ -1,6 +1,7 @@
 import { gql, useQuery } from '@apollo/client';
 import React from 'react';
 import { Text, View } from 'react-native';
+import tw from '../../../lib/tailwind.js';
 
 interface IClass {
   id: string;
@@ -19,6 +20,7 @@ const bard = gql`
     pcClass(id: "437fbeea-d481-4333-8b5a-471f8d0005fc") {
       name
       hitDice
+      description
       primaryAbility
     }
   }
@@ -26,8 +28,9 @@ const bard = gql`
 
 const Characters: React.FC = () => {
   const { loading, error, data } = useQuery<IClassData>(bard);
-  if (loading) return <Text>Loading</Text>;
-  if (error) return <Text>Error :(</Text>;
+  if (error) {
+    return <Text>Error :(</Text>;
+  }
   return (
     <View>
       <Text>Classe Bardo</Text>
@@ -35,7 +38,7 @@ const Characters: React.FC = () => {
         <Text>Loading...</Text>
       ) : (
         <>
-          <Text>Dados</Text>
+          <Text style={tw`text-font700 text-primary500`}>Dados</Text>
           {data && <Text>{data.pcClass.description}</Text>}
         </>
       )}

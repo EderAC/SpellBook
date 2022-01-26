@@ -3,12 +3,7 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import { View, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import {
-  ApolloClient,
-  ApolloProvider,
-  gql,
-  InMemoryCache,
-} from '@apollo/client';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Routes from './routes';
 
 const client = new ApolloClient({
@@ -19,8 +14,8 @@ const client = new ApolloClient({
 const App: React.FC = () => (
   <ApolloProvider client={client}>
     <NavigationContainer>
-      <StatusBar barStyle="light-content" backgroundColor="#312e38" />
-      <View style={{ flex: 1, backgroundColor: '#312e38' }}>
+      <StatusBar barStyle="light-content" backgroundColor="#D1BDAB" />
+      <View style={{ flex: 1, backgroundColor: '#D1BDAB' }}>
         <Routes />
       </View>
     </NavigationContainer>
