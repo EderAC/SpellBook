@@ -14,8 +14,8 @@ const client = new ApolloClient({
 const App: React.FC = () => (
   <ApolloProvider client={client}>
     <NavigationContainer>
-      <StatusBar barStyle="light-content" backgroundColor="#D1BDAB" />
-      <View style={{ flex: 1, backgroundColor: '#D1BDAB' }}>
+      <StatusBar barStyle="light-content" backgroundColor="#232129" />
+      <View style={{ flex: 1, backgroundColor: '#232129' }}>
         <Routes />
       </View>
     </NavigationContainer>
